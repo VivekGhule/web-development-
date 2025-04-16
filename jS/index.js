@@ -9,3 +9,4 @@ if (weather === "sunny") {
 }else {
     console.log("It's a rainy day!");
 }
+
