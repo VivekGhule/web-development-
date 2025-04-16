@@ -2,16 +2,16 @@
 
 function gredCalculator (userMarks) {
     let gred ;
-    if (userMarks === 90) {
+    if (userMarks >= 90) {
         gred = "A"
         
-    }else if (userMarks === 80){
+    }else if (userMarks >= 80){
          gred = "B"
     }
-    else if (userMarks === 70){
+    else if (userMarks >= 70){
          gred = "C"
     }
-    else if (userMarks === 60){
+    else if (userMarks >= 60){
          gred = "D"
     }
     else {
@@ -21,4 +21,4 @@ function gredCalculator (userMarks) {
     return gred
 }
 
-console.log(gredCalculator(50));
+console.log(gredCalculator(63));
