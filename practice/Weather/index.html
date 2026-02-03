@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-slate-900">
+
+    <!-- Weather Card -->
+    <div class="w-[520px] bg-white rounded-2xl shadow-xl p-6">
+
+        <!-- Search Section -->
+        <div class="flex gap-3 mb-6">
+
+            <input 
+                id="searchInput"
+                type="text"
+                placeholder="Enter city name..."
+                class="flex-1 border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-800"
+            >
+
+            <button 
+                id="searchBtn"
+                class="bg-slate-800 text-white px-6 rounded-xl hover:bg-slate-700 transition">
+                Search
+            </button>
+
+        </div>
+
+        <!-- Location -->
+        <div class="text-center mb-6">
+            <h1 id="name" class="text-3xl font-bold">City</h1>
+            <p id="country" class="text-gray-500">Country</p>
+        </div>
+
+        <!-- Weather Info -->
+        <div class="flex items-center justify-center gap-6 mb-6">
+
+            <img 
+                id="icon"
+                src=""
+                alt="Weather Icon"
+                class="w-24 h-24"
+            >
+
+            <div>
+                <p id="temp" class="text-5xl font-bold">--°C</p>
+                <p id="description" class="text-gray-600 capitalize">
+                    Description
+                </p>
+                <p id="mainWeather" class="text-gray-500">
+                    Weather Type
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Weather Details -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+
+            <div class="bg-slate-100 p-4 rounded-xl">
+                <p class="text-gray-500">Feels Like</p>
+                <p id="feels_like" class="text-xl font-semibold">--</p>
+            </div>
+
+            <div class="bg-slate-100 p-4 rounded-xl">
+                <p class="text-gray-500">Humidity</p>
+                <p id="humidity" class="text-xl font-semibold">--</p>
+            </div>
+
+            <div class="bg-slate-100 p-4 rounded-xl">
+                <p class="text-gray-500">Pressure</p>
+                <p id="pressure" class="text-xl font-semibold">--</p>
+            </div>
+
+            <div class="bg-slate-100 p-4 rounded-xl">
+                <p class="text-gray-500">Visibility</p>
+                <p id="visibility" class="text-xl font-semibold">--</p>
+            </div>
+
+        </div>
+
+        <!-- Wind + Clouds -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+
+            <div class="bg-slate-100 p-4 rounded-xl">
+                <p class="text-gray-500">Wind Speed</p>
+                <p id="wind_speed" class="text-xl font-semibold">--</p>
+            </div>
+
+            <div class="bg-slate-100 p-4 rounded-xl">
+                <p class="text-gray-500">Cloud Coverage</p>
+                <p id="clouds" class="text-xl font-semibold">--</p>
+            </div>
+
+        </div>
+
+        <!-- Coordinates -->
+        <div class="bg-slate-100 p-4 rounded-xl text-center">
+            <p class="text-gray-500">Coordinates</p>
+            <p>
+                Lat: <span id="lat"></span> |
+                Lon: <span id="lon"></span>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Your Script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
