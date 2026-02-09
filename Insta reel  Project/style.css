@@ -1,0 +1,171 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #ffffff;
+    background: radial-gradient(circle at right bottom, #000000, #1c1c1c, #1a1919);
+}
+
+
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    width: 100%;
+    max-width: 480px; /* optional wrapper max width */
+    position: relative;
+}
+
+/* ========== Reel Container ========== */
+
+.allreel-container {
+    width: min(380px, 100%);
+    aspect-ratio: 9 / 16;           /* vertical reel */
+    background-color: #000000;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ========== Reel Media ========== */
+
+.reel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.reel > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gradient overlay for better text readability */
+.reel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: 0; /* KEEP THIS */
+}
+
+
+/* ========== Bottom Content (Profile + Caption) ========== */
+
+.bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px;
+    color: white;
+    z-index: 2; /* ADD THIS */
+}
+
+
+
+
+.bottom .profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.bottom .profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bottom .profile h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.bottom .profile button {
+    margin-left: auto; /* push button to the right */
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.bottom .profile button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.bottom h5 {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 0 4px;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+/* ========== Right Actions (Like / Comment / Share) ========== */
+
+.right {
+    position: absolute;
+    right: 10px;
+    bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 2; /* ADD THIS */
+}
+
+.right > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+
+.right i {
+    font-size: 1.6rem;
+}
+
+.right h5 {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
